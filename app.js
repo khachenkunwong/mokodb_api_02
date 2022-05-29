@@ -1,18 +1,20 @@
  const express=require('express');
 const app=express();
 const morgan=require('morgan');
-const mongoose=require('mongoose');
+const mongoose = require('mongoose');
+const config = require('config');
 
 const userRouter=require('./Routes/user');
+const dbConfig = config.get('PMS.dbConfig.dbName');
 
-mongoose.connect('mongodb+srv://armkingland:NwittJdvttKnZ3pG@cluster0.cqd1s.mongodb.net/?retryWrites=true&w=majority',{
+mongoose.connect(dbConfig,{
     useNewUrlParser:true,
-useUnifiedTopology:true,
-useFindAndModify:false,
-useCreateIndex:true
-}).then(()=>{
+    useUnifiedTopology:true,
+    useFindAndModify:false,
+    useCreateIndex:true
+    }).then(()=>{
     console.log('Database Connected');
-}).catch(err=>{
+    }).catch(err=>{
     console.log("Database not Connected"+err);
 });
 
@@ -31,7 +33,7 @@ app.use((req,res,next)=>{
         res.header('Accept-Control-Methods','PUT,POST,PATCH,DELETE,GET');
         return res.status(200).json({
 
-        })
+        });
     }
     next();
 });
@@ -49,7 +51,7 @@ app.use((error,req,res,next)=>{
         error:{
             message:error.message
         }
-    })
-})
+    });
+});
 
 module.exports=app;

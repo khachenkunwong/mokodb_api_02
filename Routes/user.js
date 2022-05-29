@@ -10,7 +10,7 @@ router.get('/',(req,res,next) => {
 });
 router.post('/',(req,res,next) => {
     
-   const user_1= new user({
+   const user_1= new User({
     user_id:mongoose.Types.ObjectId(),
     mail:req.body.mail,
     name:req.body.name,
@@ -21,14 +21,12 @@ router.post('/',(req,res,next) => {
    user_1.save().then(result => {
        console.log(result);
        res.status(200).json({
-        message: result,
-        
+        message: result, 
     });
    }).catch(err => {
        console.log(err);
        res.status(500).json({
-        message: err,
-        
+        message: err,  
     });
    });
 

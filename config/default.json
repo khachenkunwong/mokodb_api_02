@@ -1,0 +1,9 @@
+{
+    "PMS": {
+      "dbConfig": {
+        "host": "localhost",
+        "port": 5984,
+        "dbName": "mongodb+srv://pms:BGRC38PYDfz4sgfJ@cluster0.cqd1s.mongodb.net/?retryWrites=true&w=majority"
+      }
+    }
+  }
