@@ -1,8 +1,21 @@
 const express=require('express');
 const app=express();
 const morgan=require('morgan');
+const mongoose=require('mongoose');
 
 const userRouter=require('./Routes/user');
+
+mongoose.connect('mongodb+srv://armkingland:NwittJdvttKnZ3pG@cluster0.cqd1s.mongodb.net/?retryWrites=true&w=majority',{
+    useNewUrlParser:true,
+useUnifiedTopology:true,
+useFindAndModify:false,
+useCreateIndex:true
+}).then(()=>{
+    console.log('Database Connected');
+}).catch(err=>{
+    console.log("Database not Connected"+err);
+});
+
 
 app.use(morgan('dev'));
 

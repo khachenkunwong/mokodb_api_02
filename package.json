@@ -1,7 +1,7 @@
 {
   "name": "projecttoturial",
   "version": "1.0.0",
-  "description": "",
+  "description": "v1 สร้าง api เอาข้อมูลไปแสดงบน postman (node index.js)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,9 +11,19 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.1",
-    "morgan": "^1.10.0"
+    "mongoose": "^5.13.3",
+    "morgan": "^1.10.0",
+    "npm-check-updates": "^13.0.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khachenkunwong/mokodb_api_02.git"
+  },
+  "bugs": {
+    "url": "https://github.com/khachenkunwong/mokodb_api_02/issues"
+  },
+  "homepage": "https://github.com/khachenkunwong/mokodb_api_02#readme"
 }
