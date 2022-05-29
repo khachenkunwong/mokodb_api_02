@@ -1,4 +1,4 @@
-#เวอร์ชัน
+# เวอร์ชัน
 v1 สร้าง api เอาข้อมูลไปแสดงบน postman (node index.js)
 
 v2 สร้าง Routes เอาเเพกเก็ตมาใช้ morgan คือคำนวนเวลา nodemon คือ ตัวช่วย (npm start)
@@ -12,7 +12,7 @@ V5 ทำการเชื่อมกับ postman ได้แล้ว
 V6 ทำการใส่เงื่อนไขในการเช็คเพื่อป้องกันไม่ให้ข้อมูลไม่ซ้ำ
 
 
-#เครื่องมือ
+# เครื่องมือ
 
 express คือ node ตัวช่วยในการเขียนของ api [express](https://www.npmjs.com/package/express)
 
