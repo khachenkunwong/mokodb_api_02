@@ -1,21 +1,38 @@
 const express= require('express');
 const router = express.Router();
+const User = require('../model/user');
+const mongoose=require('mongoose');
 
 router.get('/',(req,res,next) => {
     res.status(200).json({
         message: "hello thsi is user request"
     });
 });
-router.post('/:userId',(req,res,next) => {
+router.post('/',(req,res,next) => {
     
-    const userid=req.params.userId;
+   const user_1= new user({
+    user_id:mongoose.Types.ObjectId(),
+    mail:req.body.mail,
+    name:req.body.name,
+    age:req.body.age,
+    
+   });
 
-    res.status(200).json({
-        message: "hello thsi is user request",
-        user_name:req.body.name,
-        user_age:req.body.age,
-        user_id:userid
+   user_1.save().then(result => {
+       console.log(result);
+       res.status(200).json({
+        message: result,
+        
     });
+   }).catch(err => {
+       console.log(err);
+       res.status(500).json({
+        message: err,
+        
+    });
+   });
+
+    
 });
 
 router.put('/',(req,res,next) => {
